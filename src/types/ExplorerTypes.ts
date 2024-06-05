@@ -4,3 +4,8 @@ export type TDirectory = {
     data? : TDirectory[]
     meta? : string
 }
+
+export enum DirectoryType {
+   FILE = "file",
+   FOLDER = "folder"
+}

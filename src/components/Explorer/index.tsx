@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { FILES } from '../../testData';
 import Directory from '../Directory';
 
@@ -7,10 +7,13 @@ function Explorer() {
     const [files, setFiles] = useState(FILES)
 
   return (
-    <div>
-       Sachin's File Explorer
+    <>
+    <h1>Sachin's File Explorer</h1>
+    <div className='explorer'>
        <Directory file={files} />
     </div>
+    
+    </>
   );
 }
 

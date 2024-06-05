@@ -13,5 +13,60 @@ code {
 }
 
 .directory{
-  padding-left: 25px;
+  padding-left:20px;
+  border-left:1px solid #ccc;
+  position: relative;
+}
+
+
+.directory .active{
+  background: #c2e7ff;
+}
+
+.directory .active:hover{
+  background: #c2e7ff;
+}
+
+
+.listing{
+  padding: 10px;
+  cursor: pointer;
+  position: relative;
+}
+
+.listing:hover{
+  background: #ececec;
+}
+
+
+h1 {
+  text-align: center;
+  margin-bottom: 50px;
+}
+.explorer{
+  border: 1px solid #afafaf;
+  width: 90vw;
+  border-radius: 10px;
+  padding: 15px;
+  background: #ffffff;
+  position: relative;
+}
+
+.context-menu{
+  padding: 10px 25px;
+  border-radius: 10px;
+  background: #f6f6f6;
+  position: fixed;
+  z-index: 9;
+}
+
+.context-menu p{
+  border-bottom: 1px solid #e7e7e7;
+  padding: 15px 25px;
+  margin: 0;
+  cursor: pointer;
+}
+
+.context-menu p:nth-last-child(){
+  border-bottom: 0;
 }
