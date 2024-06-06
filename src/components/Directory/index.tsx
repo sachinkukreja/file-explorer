@@ -3,6 +3,7 @@ import { DirectoryType, TDirectory } from '../../types/ExplorerTypes';
 import ContextMenu from '../ContextMenu';
 
 
+
 function Directory({file}:{file:TDirectory}){
 const [isExpanded, setIsExpanded] = useState(false)
 const [isSelected, setIsSelected] = useState(false)
@@ -35,12 +36,22 @@ const handleOnContextMenuClick = (file:TDirectory, eventTriggered:string)=>{
     console.log(`Event ${eventTriggered}  triggered on File name : ${file.name} `)
 }
 
+const renderFileIcon = (file_meta :string | undefined) => {
+
+    if(!!file_meta?.trim())
+    return (
+        <img src={`/icons/fileTypes/${file_meta}.svg`} className='file-icon' alt="file type icon"/>
+    )
+
+    return 
+}
+
 return (
     <>
     <div className={`directory ${isSelected ? "active" : ""}`}>
     <div className='listing' onClick={()=>handleClick()} onContextMenu={handleContextMenuOpen}>
       {file.type === DirectoryType.FOLDER ? isExpanded ? "📂" : "📁" : ""}
-      {file.name}
+      {file.type === DirectoryType.FILE && renderFileIcon(file.meta)} {file.name}
     </div>
     {isExpanded &&
       file.data?.map(_file => <Directory key={_file.name} file ={_file}/>)

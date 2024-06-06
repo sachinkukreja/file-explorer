@@ -23,7 +23,7 @@ code {
   background: #c2e7ff;
 }
 
-.directory .active:hover{
+.active .listing:hover{
   background: #c2e7ff;
 }
 
@@ -44,12 +44,13 @@ h1 {
   margin-bottom: 50px;
 }
 .explorer{
-  border: 1px solid #afafaf;
+  border: 1px solid #ebebeb;
   width: 90vw;
   border-radius: 10px;
   padding: 15px;
   background: #ffffff;
   position: relative;
+  margin: 0 auto;
 }
 
 .context-menu{
@@ -69,4 +70,8 @@ h1 {
 
 .context-menu p:nth-last-child(){
   border-bottom: 0;
+}
+
+.file-icon{
+  width :16px;
 }
