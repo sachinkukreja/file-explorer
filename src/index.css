@@ -19,7 +19,7 @@ code {
 }
 
 
-.directory .active{
+.listing:focus{
   background: #c2e7ff;
 }
 
@@ -32,6 +32,10 @@ code {
   padding: 10px;
   cursor: pointer;
   position: relative;
+  background: transparent;
+  outline: 0;
+  border: none;
+  font-size: 16px;
 }
 
 .listing:hover{

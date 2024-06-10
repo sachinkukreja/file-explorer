@@ -23,7 +23,7 @@ const handleClick = ()=>{
     setIsSelected(!isSelected)
 }
 
-const handleContextMenuOpen = (event: MouseEvent<HTMLDivElement, globalThis.MouseEvent>)=>{
+const handleContextMenuOpen = (event: MouseEvent<HTMLButtonElement, globalThis.MouseEvent>)=>{
     event.preventDefault()
     const {pageX, pageY} = event
     if(file.type === DirectoryType.FILE )
@@ -49,10 +49,10 @@ const renderFileIcon = (file_meta :string | undefined) => {
 return (
     <>
     <div className={`directory ${isSelected ? "active" : ""}`}>
-    <div className='listing' onClick={()=>handleClick()} onContextMenu={handleContextMenuOpen}>
+    <button className='listing' onClick={()=>handleClick()} onContextMenu={handleContextMenuOpen}>
       {file.type === DirectoryType.FOLDER ? isExpanded ? "📂" : "📁" : ""}
       {file.type === DirectoryType.FILE && renderFileIcon(file.meta)} {file.name}
-    </div>
+    </button>
     {isExpanded &&
       file.data?.map(_file => <Directory key={_file.name} file ={_file}/>)
     }
